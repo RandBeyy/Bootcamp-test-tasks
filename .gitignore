@@ -1,0 +1,4 @@
+.venv/
+videos/
+try.py
+.DS_store
