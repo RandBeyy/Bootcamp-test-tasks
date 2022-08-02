@@ -22,18 +22,17 @@ class NoteManager():
         self.notes.drop(self.notes.index[(self.notes['film_name'] == filmname)],axis = 0, inplace = True)
         self.notes.to_csv(self.filename, mode='w', index = False, header = True)
 
-    def readNotes(self):
+    def printNotes(self):
         print(self.notes.to_string())
 
     def getHighRated(self):
-        print(self.notes[self.notes.rating == self.notes.rating.max()])
+        return self.notes[self.notes.rating == self.notes.rating.max()]
 
     def getLowRated(self):
-        print(self.notes[self.notes.rating == self.notes.rating.min()])
+        return self.notes[self.notes.rating == self.notes.rating.min()]
 
     def getAvRating(self):
-        avrate = self.notes['rating'].mean()
-        print(f'Average rating of films is {avrate : .2f}')
+        return self.notes['rating'].mean()
 
     def __getitem__(self, sliced):
         return self.notes.iloc[sliced].to_string()
