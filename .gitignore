@@ -2,3 +2,5 @@
 videos/
 try.py
 .DS_store
+*.pyc
+*.csv
